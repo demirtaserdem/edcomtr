@@ -1,0 +1,11 @@
+<footer>
+    <span>© {{today|date:'yyyy'}} demirtaserdem.biz</span>
+    <div fxFlex fxLayout="row" fxLayoutAlign="center">
+        <ng-container *ngFor="let social of socialArray">
+                <a [href]="social.link" [title]="social.name" target="_blank" rel="noopener noreferrer">
+                <fa-icon [icon]="social.icon"></fa-icon>
+            </a>
+        </ng-container>
+        <span>/demirtaserdem</span>
+    </div>
+</footer>

@@ -1,27 +1,20 @@
-# Edcomtr
+ng new edcom.tr --routing=true --style=scss
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+ng add @angular/material
+ng add @fortawesome/angular-fontawesome
+npm i @angular/flex-layout @angular/cdk --save
 
-## Development server
+ng g m layouts/default
+ng g c layouts/default --module=layouts/default
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ng g m pages/main --routing=true --routing=true
+ng g c pages/main --module=pages/main
 
-## Code scaffolding
+ng serve --aot
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng g m shared
+ng g c shared/components/header --module=shared --export
+ng g c shared/components/footer --module=shared --export
+ng g c shared/components/sidebar --module=shared --export
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ng g s services/components/layout
