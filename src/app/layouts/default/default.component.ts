@@ -8,7 +8,7 @@ import { Subscription } from "rxjs";
   styleUrls: ['./default.component.scss']
 })
 export class DefaultComponent implements OnInit, OnDestroy {
-  sidebarOpened: boolean = true;
+  sidebarOpened: boolean = false;
   subscription: Subscription;
 
   constructor(private layoutservice: LayoutService) { }
