@@ -4,17 +4,19 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DefaultModule } from './layouts/default/default.module';
 
 
-const routes: Routes = [{
-  path: '', component: DefaultComponent,
-  children: [{
-    path: '', redirectTo: '/main', pathMatch: 'full'
-  },
+const routes: Routes = [
   {
-    path: 'main', loadChildren: () =>
-      import('./pages/main/main.module').then(
-        m => m.MainModule)
-  }]
-}];
+    path: '', component: DefaultComponent,
+    children: [{
+      path: '', redirectTo: '/main', pathMatch: 'full'
+    },
+    {
+      path: 'main', loadChildren: () =>
+        import('./pages/main/main.module').then(
+          m => m.MainModule)
+    }]
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },];
 
 @NgModule({
   imports: [
